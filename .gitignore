@@ -88,3 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+KeyboardTest.xcodeproj/xcuserdata
+KeyboardTest.xcodeproj/project.xcworkspace
+KeyboardTest.xcodeproj/xcshareddata

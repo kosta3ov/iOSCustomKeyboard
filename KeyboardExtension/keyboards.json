@@ -1,0 +1,14 @@
+[
+    {
+        "lang": "eng",
+        "rows": "qwertyuiop\nasdfghjkl\nzxcvbnm"
+    },
+    {
+        "lang": "rus",
+        "rows": "йцукенгшщзх\nфывапролджэ\nячсмитьбю"
+    },
+    {
+        "lang": "de",
+        "rows": "qwertzuiopü\nasdfghjklöä\nyxcvbnm"
+    }
+]
