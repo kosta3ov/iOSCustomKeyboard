@@ -20,6 +20,12 @@
 		44EE30DC2805A6C80009983C /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30DA2805A68B0009983C /* KeyboardManager.swift */; };
 		44EE30DE2805A8C70009983C /* keyboards.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EE30DD2805A8C70009983C /* keyboards.json */; };
 		44EE30DF280636C20009983C /* keyboards.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EE30DD2805A8C70009983C /* keyboards.json */; };
+		44EE30E22808D34B0009983C /* KeyboardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E12808D34A0009983C /* KeyboardRow.swift */; };
+		44EE30E32808D3510009983C /* KeyboardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E12808D34A0009983C /* KeyboardRow.swift */; };
+		44EE30E52808D3990009983C /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E42808D3990009983C /* KeyboardButton.swift */; };
+		44EE30E62808D3990009983C /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E42808D3990009983C /* KeyboardButton.swift */; };
+		44EE30E8280D8F730009983C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E7280D8F710009983C /* Language.swift */; };
+		44EE30E9280D8F730009983C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30E7280D8F710009983C /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,9 @@
 		44EE30DA2805A68B0009983C /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		44EE30DD2805A8C70009983C /* keyboards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keyboards.json; sourceTree = "<group>"; };
 		44EE30E0280781D30009983C /* KeyboardTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardTest.entitlements; sourceTree = "<group>"; };
+		44EE30E12808D34A0009983C /* KeyboardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRow.swift; sourceTree = "<group>"; };
+		44EE30E42808D3990009983C /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		44EE30E7280D8F710009983C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,8 @@
 				44B301DE27FC4A4800747EE0 /* Assets.xcassets */,
 				44B301E027FC4A4800747EE0 /* Preview Content */,
 				44B8DA0B27FC702A001D5088 /* KeyboardView.swift */,
+				44EE30E12808D34A0009983C /* KeyboardRow.swift */,
+				44EE30E42808D3990009983C /* KeyboardButton.swift */,
 			);
 			path = KeyboardTest;
 			sourceTree = "<group>";
@@ -122,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				44EE30DA2805A68B0009983C /* KeyboardManager.swift */,
+				44EE30E7280D8F710009983C /* Language.swift */,
 				44EE30DD2805A8C70009983C /* keyboards.json */,
 				44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */,
 				44B301F027FC5D9C00747EE0 /* Info.plist */,
@@ -232,8 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				44B8DA0C27FC702A001D5088 /* KeyboardView.swift in Sources */,
+				44EE30E52808D3990009983C /* KeyboardButton.swift in Sources */,
 				44B301DD27FC4A4500747EE0 /* ContentView.swift in Sources */,
 				44EE30DB2805A68B0009983C /* KeyboardManager.swift in Sources */,
+				44EE30E22808D34B0009983C /* KeyboardRow.swift in Sources */,
+				44EE30E8280D8F730009983C /* Language.swift in Sources */,
 				44B301DB27FC4A4500747EE0 /* KeyboardTestApp.swift in Sources */,
 				44B8DA0E27FC70A1001D5088 /* KeyboardViewController.swift in Sources */,
 			);
@@ -243,7 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EE30E62808D3990009983C /* KeyboardButton.swift in Sources */,
 				44B301EF27FC5D9C00747EE0 /* KeyboardViewController.swift in Sources */,
+				44EE30E32808D3510009983C /* KeyboardRow.swift in Sources */,
+				44EE30E9280D8F730009983C /* Language.swift in Sources */,
 				44B8DA0D27FC7033001D5088 /* KeyboardView.swift in Sources */,
 				44EE30DC2805A6C80009983C /* KeyboardManager.swift in Sources */,
 			);

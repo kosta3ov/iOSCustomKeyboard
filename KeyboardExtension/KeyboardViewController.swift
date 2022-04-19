@@ -15,9 +15,14 @@ class KeyboardViewController: UIInputViewController {
     private let keyboardsUserDefault = UserDefaults(suiteName: "group.KeyboardExtension")!
 
     private lazy var hostingController: UIHostingController<KeyboardView> = {
+        let keyboardLanguageStoredValue = keyboardsUserDefault.string(forKey: "keyboard_language") ?? "eng"
+        
+        let language = Language(rawValue: keyboardLanguageStoredValue) ?? .englisch
+        
         let keyboardManager = KeyboardManager()
-        let keyboardViewModel = try! keyboardManager.retrieveKeyboard(for: .german)
+        let keyboardViewModel = KeyboardViewModel(language: .englisch, textDocumentProxy: textDocumentProxy, buttonsProvider: keyboardManager)
         let view = KeyboardView(viewModel: keyboardViewModel)
+        
         let controller = UIHostingController(rootView: view)
         return controller
     }()

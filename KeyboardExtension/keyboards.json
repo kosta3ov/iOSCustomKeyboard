@@ -10,5 +10,13 @@
     {
         "lang": "de",
         "rows": "qwertzuiopü\nasdfghjklöä\nyxcvbnm"
+    },
+    {
+        "lang": "123",
+        "rows": "1234567890\n-/:;()$&@\"\n.,?!'"
+    },
+    {
+        "lang": "#+=",
+        "rows": "[]{}#%^*+=\n_\\|~<>€￡￥·\n.,?!'"
     }
 ]
