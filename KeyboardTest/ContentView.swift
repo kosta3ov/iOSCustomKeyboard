@@ -10,14 +10,27 @@ import SwiftUI
 struct ContentView: View {
     
     var viewModel: KeyboardViewModel {
-        try! KeyboardManager().retrieveKeyboard(for: .englisch)
+        KeyboardViewModel(language: .russian, textDocumentProxy: nil, buttonsProvider: KeyboardManager())
     }
     
+    var languages: [Language] = [.englisch, .german, .russian]
+    
+    @AppStorage("keyboard_language", store: UserDefaults(suiteName: "group.KeyboardExtension")) var keyboardLanguage: String = "eng"
+    
     var body: some View {
-        ZStack {
-            Color.gray
-            KeyboardView(viewModel: viewModel)
-                .frame(width: 200, height: 250)
+        VStack {
+            ZStack {
+                Color.gray
+                KeyboardView(viewModel: viewModel)
+                    .frame(width: 250, height: 200)
+                    
+            }
+            
+            Picker("Choose language", selection: $keyboardLanguage) {
+                ForEach(languages, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
         }
     }
 }
