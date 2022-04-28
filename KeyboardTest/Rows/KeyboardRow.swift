@@ -10,18 +10,18 @@ import Combine
 
 struct KeyboardRow: View {
     
+    @EnvironmentObject var keyboardEnvironment: KeyboardEnvironment
+    
     let row: [ButtonViewModel]
     let buttonSize: CGSize
-    let indent: CGFloat
-    let onTapSubject: PassthroughSubject<String, Never>
+    let onTapSubject: KeyboardSubject
         
     var body: some View {
-        HStack(spacing: indent) {
+        HStack(spacing: keyboardEnvironment.indent) {
             ForEach(row, id: \.character) { button in
                 KeyboardButton(viewModel: button, onTapSubject: onTapSubject)
-                    .frame(width: buttonSize.width,
-                           height: buttonSize.height)
-                    .background(Color.white)
+                    .frame(width: buttonSize.width, height: buttonSize.height)
+                    .environmentObject(keyboardEnvironment)
             }
         }
     }

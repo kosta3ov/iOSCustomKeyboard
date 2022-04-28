@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+enum AppStorageKey: String {
+    case keyboardLanguage = "keyboard_language"
+}
+
 @main
 struct KeyboardTestApp: App {
+        
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448568162819845E00332103 /* KeyboardFunctionalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448568152819845E00332103 /* KeyboardFunctionalRow.swift */; };
+		448568172819845E00332103 /* KeyboardFunctionalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448568152819845E00332103 /* KeyboardFunctionalRow.swift */; };
+		44856819281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856818281A962E00332103 /* KeyboardServiceLastRow.swift */; };
+		4485681A281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856818281A962E00332103 /* KeyboardServiceLastRow.swift */; };
+		4485681C281A9C9F00332103 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485681B281A9C9F00332103 /* KeyboardViewModel.swift */; };
+		4485681D281A9C9F00332103 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485681B281A9C9F00332103 /* KeyboardViewModel.swift */; };
+		4485681F281A9D5000332103 /* KeyboardCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485681E281A9D5000332103 /* KeyboardCalculator.swift */; };
+		44856820281A9D5000332103 /* KeyboardCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485681E281A9D5000332103 /* KeyboardCalculator.swift */; };
+		44856822281A9E5800332103 /* Keyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856821281A9E5800332103 /* Keyboard+Extensions.swift */; };
+		44856823281A9E5800332103 /* Keyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856821281A9E5800332103 /* Keyboard+Extensions.swift */; };
+		44856826281AA60300332103 /* KeyboardShiftDeleteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856825281AA60300332103 /* KeyboardShiftDeleteRow.swift */; };
+		44856827281AA60300332103 /* KeyboardShiftDeleteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856825281AA60300332103 /* KeyboardShiftDeleteRow.swift */; };
 		44B301DB27FC4A4500747EE0 /* KeyboardTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B301DA27FC4A4500747EE0 /* KeyboardTestApp.swift */; };
 		44B301DD27FC4A4500747EE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B301DC27FC4A4500747EE0 /* ContentView.swift */; };
 		44B301DF27FC4A4800747EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B301DE27FC4A4800747EE0 /* Assets.xcassets */; };
-		44B301E227FC4A4800747EE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B301E127FC4A4800747EE0 /* Preview Assets.xcassets */; };
 		44B301EF27FC5D9C00747EE0 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */; };
 		44B301F327FC5D9C00747EE0 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 44B301EC27FC5D9C00747EE0 /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		44B8DA0C27FC702A001D5088 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8DA0B27FC702A001D5088 /* KeyboardView.swift */; };
 		44B8DA0D27FC7033001D5088 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8DA0B27FC702A001D5088 /* KeyboardView.swift */; };
-		44B8DA0E27FC70A1001D5088 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */; };
+		44C84DBE280F6A77009F6894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B301DE27FC4A4800747EE0 /* Assets.xcassets */; };
 		44EE30DB2805A68B0009983C /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30DA2805A68B0009983C /* KeyboardManager.swift */; };
 		44EE30DC2805A6C80009983C /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE30DA2805A68B0009983C /* KeyboardManager.swift */; };
 		44EE30DE2805A8C70009983C /* keyboards.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EE30DD2805A8C70009983C /* keyboards.json */; };
@@ -53,11 +64,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		448568152819845E00332103 /* KeyboardFunctionalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFunctionalRow.swift; sourceTree = "<group>"; };
+		44856818281A962E00332103 /* KeyboardServiceLastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardServiceLastRow.swift; sourceTree = "<group>"; };
+		4485681B281A9C9F00332103 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
+		4485681E281A9D5000332103 /* KeyboardCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCalculator.swift; sourceTree = "<group>"; };
+		44856821281A9E5800332103 /* Keyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+Extensions.swift"; sourceTree = "<group>"; };
+		44856825281AA60300332103 /* KeyboardShiftDeleteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShiftDeleteRow.swift; sourceTree = "<group>"; };
 		44B301D727FC4A4500747EE0 /* KeyboardTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B301DA27FC4A4500747EE0 /* KeyboardTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTestApp.swift; sourceTree = "<group>"; };
 		44B301DC27FC4A4500747EE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		44B301DE27FC4A4800747EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		44B301E127FC4A4800747EE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44B301EC27FC5D9C00747EE0 /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		44B301F027FC5D9C00747EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +104,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44856824281A9F3800332103 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				448568152819845E00332103 /* KeyboardFunctionalRow.swift */,
+				44856818281A962E00332103 /* KeyboardServiceLastRow.swift */,
+				44EE30E12808D34A0009983C /* KeyboardRow.swift */,
+				44856825281AA60300332103 /* KeyboardShiftDeleteRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
 		44B301CE27FC4A4500747EE0 = {
 			isa = PBXGroup;
 			children = (
@@ -109,24 +136,18 @@
 		44B301D927FC4A4500747EE0 /* KeyboardTest */ = {
 			isa = PBXGroup;
 			children = (
+				44856824281A9F3800332103 /* Rows */,
 				44EE30E0280781D30009983C /* KeyboardTest.entitlements */,
 				44B301DA27FC4A4500747EE0 /* KeyboardTestApp.swift */,
 				44B301DC27FC4A4500747EE0 /* ContentView.swift */,
 				44B301DE27FC4A4800747EE0 /* Assets.xcassets */,
-				44B301E027FC4A4800747EE0 /* Preview Content */,
 				44B8DA0B27FC702A001D5088 /* KeyboardView.swift */,
-				44EE30E12808D34A0009983C /* KeyboardRow.swift */,
 				44EE30E42808D3990009983C /* KeyboardButton.swift */,
+				4485681B281A9C9F00332103 /* KeyboardViewModel.swift */,
+				4485681E281A9D5000332103 /* KeyboardCalculator.swift */,
+				44856821281A9E5800332103 /* Keyboard+Extensions.swift */,
 			);
 			path = KeyboardTest;
-			sourceTree = "<group>";
-		};
-		44B301E027FC4A4800747EE0 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				44B301E127FC4A4800747EE0 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		44B301ED27FC5D9C00747EE0 /* KeyboardExtension */ = {
@@ -222,7 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44B301E227FC4A4800747EE0 /* Preview Assets.xcassets in Resources */,
 				44EE30DF280636C20009983C /* keyboards.json in Resources */,
 				44B301DF27FC4A4800747EE0 /* Assets.xcassets in Resources */,
 			);
@@ -232,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C84DBE280F6A77009F6894 /* Assets.xcassets in Resources */,
 				44EE30DE2805A8C70009983C /* keyboards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,13 +265,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44B8DA0C27FC702A001D5088 /* KeyboardView.swift in Sources */,
+				4485681C281A9C9F00332103 /* KeyboardViewModel.swift in Sources */,
 				44EE30E52808D3990009983C /* KeyboardButton.swift in Sources */,
+				448568162819845E00332103 /* KeyboardFunctionalRow.swift in Sources */,
+				44856822281A9E5800332103 /* Keyboard+Extensions.swift in Sources */,
 				44B301DD27FC4A4500747EE0 /* ContentView.swift in Sources */,
+				4485681F281A9D5000332103 /* KeyboardCalculator.swift in Sources */,
 				44EE30DB2805A68B0009983C /* KeyboardManager.swift in Sources */,
+				44856826281AA60300332103 /* KeyboardShiftDeleteRow.swift in Sources */,
 				44EE30E22808D34B0009983C /* KeyboardRow.swift in Sources */,
 				44EE30E8280D8F730009983C /* Language.swift in Sources */,
+				44856819281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */,
 				44B301DB27FC4A4500747EE0 /* KeyboardTestApp.swift in Sources */,
-				44B8DA0E27FC70A1001D5088 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EE30E62808D3990009983C /* KeyboardButton.swift in Sources */,
+				44856827281AA60300332103 /* KeyboardShiftDeleteRow.swift in Sources */,
+				4485681A281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */,
+				448568172819845E00332103 /* KeyboardFunctionalRow.swift in Sources */,
+				44856823281A9E5800332103 /* Keyboard+Extensions.swift in Sources */,
 				44B301EF27FC5D9C00747EE0 /* KeyboardViewController.swift in Sources */,
 				44EE30E32808D3510009983C /* KeyboardRow.swift in Sources */,
+				4485681D281A9C9F00332103 /* KeyboardViewModel.swift in Sources */,
+				44856820281A9D5000332103 /* KeyboardCalculator.swift in Sources */,
 				44EE30E9280D8F730009983C /* Language.swift in Sources */,
 				44B8DA0D27FC7033001D5088 /* KeyboardView.swift in Sources */,
 				44EE30DC2805A6C80009983C /* KeyboardManager.swift in Sources */,
@@ -404,7 +436,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"KeyboardTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GG8WA65HK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,7 +468,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"KeyboardTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GG8WA65HK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

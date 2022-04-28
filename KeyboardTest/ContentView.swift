@@ -6,30 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     
-    var viewModel: KeyboardViewModel {
-        KeyboardViewModel(language: .russian, textDocumentProxy: nil, buttonsProvider: KeyboardManager())
-    }
+    var viewModel: KeyboardViewModel!
     
     var languages: [Language] = [.englisch, .german, .russian]
     
-    @AppStorage("keyboard_language", store: UserDefaults(suiteName: "group.KeyboardExtension")) var keyboardLanguage: String = "eng"
+    var env: KeyboardEnvironment!
+    var calculator: KeyboardCalculator!
+                
+    init() {
+        self.env = KeyboardEnvironment(languages: languages,
+                                       textDocumentProxy: nil,
+                                       shouldChangeKeyboards: false)
+        self.viewModel = KeyboardViewModel(keyboardEnvironment: env, buttonsProvider: KeyboardManager())
+        self.calculator = KeyboardCalculator(viewModel: viewModel, keyboardEnvironment: env)
+    }
     
     var body: some View {
         VStack {
             ZStack {
                 Color.gray
-                KeyboardView(viewModel: viewModel)
-                    .frame(width: 250, height: 200)
-                    
-            }
-            
-            Picker("Choose language", selection: $keyboardLanguage) {
-                ForEach(languages, id: \.self) {
-                    Text($0.rawValue)
-                }
+                
+                KeyboardView(viewModel: viewModel, keyboardCalculator: calculator)
+                    .frame(width: 300, height: 200)
+                    .environmentObject(env)
             }
         }
     }
