@@ -12,20 +12,8 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
-    private let keyboardsUserDefault = UserDefaults(suiteName: "group.KeyboardExtension")!
-
-    private lazy var hostingController: UIHostingController<KeyboardView> = {
-        let keyboardLanguageStoredValue = keyboardsUserDefault.string(forKey: "keyboard_language") ?? "eng"
-        
-        let language = Language(rawValue: keyboardLanguageStoredValue) ?? .englisch
-        
-        let keyboardManager = KeyboardManager()
-        let keyboardViewModel = KeyboardViewModel(language: .englisch, textDocumentProxy: textDocumentProxy, buttonsProvider: keyboardManager)
-        let view = KeyboardView(viewModel: keyboardViewModel)
-        
-        let controller = UIHostingController(rootView: view)
-        return controller
-    }()
+    private let keyboardsUserDefault = UserDefaults.standard
+    private var keyboardEnvironment: KeyboardEnvironment?
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -44,7 +32,17 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(self.nextKeyboardButton)
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        keyboardEnvironment = KeyboardEnvironment(languages: [.englisch, .russian, .german],
+                                                  textDocumentProxy: textDocumentProxy,
+                                                  shouldChangeKeyboards: self.needsInputModeSwitchKey)
 
+        let keyboardManager = KeyboardManager()
+        let keyboardViewModel = KeyboardViewModel(keyboardEnvironment: keyboardEnvironment!, buttonsProvider: keyboardManager)
+        let keyboardView = KeyboardView(viewModel: keyboardViewModel, keyboardCalculator: KeyboardCalculator(viewModel: keyboardViewModel, keyboardEnvironment: keyboardEnvironment!))
+            .environmentObject(keyboardEnvironment!)
+        let hostingController = UIHostingController(rootView: keyboardView)
+        
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.didMove(toParent: self)
