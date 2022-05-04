@@ -24,25 +24,25 @@ extension UITextDocumentProxy {
     var returnKeyTitle: String {
         switch returnKeyType {
         case .go:
-            return "Go";
+            return "Go"
         case .yahoo, .google, .search:
-            return "Search";
+            return "Search"
         case .join:
-            return "Join";
+            return "Join"
         case .next:
-            return "Next";
+            return "Next"
         case .route:
-            return "Route";
+            return "Route"
         case .send:
-            return "Send";
+            return "Send"
         case .done:
-            return "Done";
+            return "Done"
         case .emergencyCall:
-            return "Call";
+            return "Call"
         case .continue:
-            return "Continue";
+            return "Continue"
         default:
-            return "return";
+            return "return"
         }
     }
 }

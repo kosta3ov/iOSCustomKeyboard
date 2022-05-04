@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import AVFoundation
 
 final class KeyboardViewModel: ObservableObject {
     
@@ -15,16 +16,13 @@ final class KeyboardViewModel: ObservableObject {
     @Published var buttons: KeyboardButtons = [[]]
     @Published var shiftKey: String = KeyboardSpecialKey.shift.rawValue
     @Published var additionalCharactersKey: String = KeyboardSpecialKey.numbers.rawValue
+    @Published var isUppercased = false
     
     var isSpecialCharsShowed = false
     
-    func isLastRow(row: [ButtonViewModel]) -> Bool {
-        buttons.firstIndex(of: row) == buttons.endIndex - 1
-    }
-    
     private var currentLanguage: Language
     private let buttonsProvider: KeyboardButtonsProviderProtocol
-    private var isUppercased = false
+    
     private lazy var document: UITextDocumentProxy? = {
         keyboardEnvironment.textDocumentProxy
     }()
@@ -35,6 +33,10 @@ final class KeyboardViewModel: ObservableObject {
         self.currentLanguage = keyboardEnvironment.languages.first!
         
         updateButtons()
+    }
+    
+    func isLastRow(row: [ButtonViewModel]) -> Bool {
+        buttons.firstIndex(of: row) == buttons.endIndex - 1
     }
     
     func tap(character: String) {
@@ -64,7 +66,7 @@ final class KeyboardViewModel: ObservableObject {
             switchNextLanguage()
             
         default:
-            document?.insertText(character)
+            insertCharacter(character: character)
         }
     }
     
@@ -111,6 +113,13 @@ final class KeyboardViewModel: ObservableObject {
         shiftKey = KeyboardSpecialKey.shift.rawValue
         additionalCharactersKey = KeyboardSpecialKey.numbers.rawValue
         updateButtons()
+    }
+    
+    private func insertCharacter(character: String) {
+        if keyboardEnvironment.shouldPlayClickSound {
+            AudioServicesPlaySystemSound(1306)
+        }
+        document?.insertText(character)
     }
     
     private func updateButtons() {

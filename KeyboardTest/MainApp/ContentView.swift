@@ -20,7 +20,8 @@ struct ContentView: View {
     init() {
         self.env = KeyboardEnvironment(languages: languages,
                                        textDocumentProxy: nil,
-                                       shouldChangeKeyboards: false)
+                                       shouldChangeKeyboards: false,
+                                       shouldPlayClickSound: true)
         self.viewModel = KeyboardViewModel(keyboardEnvironment: env, buttonsProvider: KeyboardManager())
         self.calculator = KeyboardCalculator(viewModel: viewModel, keyboardEnvironment: env)
     }

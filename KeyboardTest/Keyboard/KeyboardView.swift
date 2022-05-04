@@ -14,8 +14,9 @@ final class KeyboardEnvironment: ObservableObject {
     let languages: [Language]
     let textDocumentProxy: UITextDocumentProxy?
     let shouldChangeKeyboards: Bool
+    let shouldPlayClickSound: Bool
     
-    let indent: CGFloat = 6
+    let indent: CGFloat = 4
     let sideKeyboardIndent: CGFloat = 3
     
     // Applied only in last row additional number keyboard
@@ -27,10 +28,12 @@ final class KeyboardEnvironment: ObservableObject {
     
     init(languages: [Language],
          textDocumentProxy: UITextDocumentProxy?,
-         shouldChangeKeyboards: Bool) {
+         shouldChangeKeyboards: Bool,
+         shouldPlayClickSound: Bool) {
         self.languages = languages
         self.textDocumentProxy = textDocumentProxy
         self.shouldChangeKeyboards = shouldChangeKeyboards
+        self.shouldPlayClickSound = shouldPlayClickSound
     }
 }
 

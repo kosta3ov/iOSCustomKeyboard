@@ -13,10 +13,12 @@ enum AppStorageKey: String {
 
 @main
 struct KeyboardTestApp: App {
+    
+    private let fabric = KeyboardFabric()
         
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            KeyboardSettings(keyboardSettingsComponent: fabric.createSettingsComponent())
         }
     }
 }
