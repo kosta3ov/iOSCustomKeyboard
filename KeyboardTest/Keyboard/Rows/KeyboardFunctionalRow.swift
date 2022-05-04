@@ -11,9 +11,10 @@ import Combine
 
 struct KeyboardFunctionalRow: View {
     
+    private let changeLanguageButtonViewModel = ButtonViewModel(character: "🌐", image: UIImage(systemName: "globe"), padding: 6)
+    
     @EnvironmentObject var keyboardEnvironment: KeyboardEnvironment
     @ObservedObject var viewModel: KeyboardViewModel
-    
     let onTapSubject: KeyboardSubject
     
     var body: some View {
@@ -25,13 +26,14 @@ struct KeyboardFunctionalRow: View {
                     .environmentObject(keyboardEnvironment)
                     .frame(minWidth: 50, maxWidth: 50)
                 
-                KeyboardButton(viewModel: ButtonViewModel(character: "🌐", padding: 6), onTapSubject: onTapSubject)
+                KeyboardButton(viewModel: changeLanguageButtonViewModel, onTapSubject: onTapSubject)
                     .environmentObject(keyboardEnvironment)
                     .fixedSize(horizontal: true, vertical: false)
                 
                 KeyboardButton(viewModel: ButtonViewModel(character: KeyboardSpecialKey.space.rawValue), onTapSubject: onTapSubject)
                     .environmentObject(keyboardEnvironment)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .layoutPriority(1)
                                 
                 KeyboardButton(viewModel: ButtonViewModel(character: keyboardEnvironment.returnKeyTitle, padding: 4), onTapSubject: onTapSubject)
                     .environmentObject(keyboardEnvironment)

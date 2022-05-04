@@ -35,7 +35,7 @@ class KeyboardViewController: UIInputViewController {
         
         keyboardEnvironment = KeyboardEnvironment(languages: [.englisch, .russian, .german],
                                                   textDocumentProxy: textDocumentProxy,
-                                                  shouldChangeKeyboards: self.needsInputModeSwitchKey)
+                                                  shouldChangeKeyboards: self.needsInputModeSwitchKey, shouldPlayClickSound: false)
 
         let keyboardManager = KeyboardManager()
         let keyboardViewModel = KeyboardViewModel(keyboardEnvironment: keyboardEnvironment!, buttonsProvider: keyboardManager)
