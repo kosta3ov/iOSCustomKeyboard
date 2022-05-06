@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445C43D628245B6900877B32 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C43D528245B6900877B32 /* SettingsRow.swift */; };
 		448568162819845E00332103 /* KeyboardFunctionalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448568152819845E00332103 /* KeyboardFunctionalRow.swift */; };
 		448568172819845E00332103 /* KeyboardFunctionalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448568152819845E00332103 /* KeyboardFunctionalRow.swift */; };
 		44856819281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44856818281A962E00332103 /* KeyboardServiceLastRow.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		445C43D528245B6900877B32 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		448568152819845E00332103 /* KeyboardFunctionalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFunctionalRow.swift; sourceTree = "<group>"; };
 		44856818281A962E00332103 /* KeyboardServiceLastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardServiceLastRow.swift; sourceTree = "<group>"; };
 		4485681B281A9C9F00332103 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				44EE94C02821760F0030C682 /* CheckRow.swift */,
 				44EE94C4282177B10030C682 /* SliderRow.swift */,
+				445C43D528245B6900877B32 /* SettingsRow.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				44B301DD27FC4A4500747EE0 /* ContentView.swift in Sources */,
 				4485681F281A9D5000332103 /* KeyboardCalculator.swift in Sources */,
 				44EE94BB282173B40030C682 /* KeyboardStyleSettings.swift in Sources */,
+				445C43D628245B6900877B32 /* SettingsRow.swift in Sources */,
 				44EE94B5281F14BD0030C682 /* KeyboardLanguagesSettings.swift in Sources */,
 				44EE30DB2805A68B0009983C /* KeyboardManager.swift in Sources */,
 				44EE94B9282168020030C682 /* KeyboardAppearanceSettings.swift in Sources */,

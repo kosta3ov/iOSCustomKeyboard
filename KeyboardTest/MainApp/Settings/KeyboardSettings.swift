@@ -45,22 +45,22 @@ struct KeyboardSettings: View {
         NavigationView {
             List {
                 NavigationLink(destination: KeyboardLanguagesSettings(viewModel: keyboardSettingsComponent.languageSettingsViewModel)) {
-                    Text("Languages")
+                    SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Languages", subtitle: "English, Русский", image: UIImage(systemName: "globe")))
                 }
                 NavigationLink(destination: KeyboardAppearanceSettings(viewModel: keyboardSettingsComponent.appearanceSettingsViewModel)) {
-                    Text("Appearance")
+                    SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Appearance", subtitle: "Themes and height", image: UIImage(systemName: "theatermasks.circle")))
                 }
                 NavigationLink(destination: ContentView()) {
-                    Text("Sound and vibrations")
+                    SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Sound and vibrations", subtitle: nil, image: UIImage(systemName: "speaker.circle")))
                 }
                 NavigationLink(destination: ContentView()) {
-                    Text("Buttons")
+                    SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Buttons", subtitle: nil, image: UIImage(systemName: "a.circle")))
                 }
                 NavigationLink(destination: ContentView()) {
-                    Text("Typing")
+                    SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Typing", subtitle: "Autocorrection", image: UIImage(systemName: "pencil.circle.fill")))
                 }
             }.navigationTitle(Text("Settings"))
         }
     }
-    
 }
+

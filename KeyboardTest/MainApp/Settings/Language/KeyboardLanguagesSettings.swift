@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct KeyboardSettingsRowViewModel: SettingRowViewModel {
+    let title: String
+    let subtitle: String?
+    let image: UIImage?
+}
+
 class LanguageViewModel: CheckRowViewModel {
    
     var title: String {
