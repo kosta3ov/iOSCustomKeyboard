@@ -9,16 +9,16 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    
+        
     var viewModel: KeyboardViewModel!
+        
+    @ObservedObject
+    var env: KeyboardEnvironment
     
-    var languages: [Language] = [.englisch, .german, .russian]
-    
-    var env: KeyboardEnvironment!
     var calculator: KeyboardCalculator!
-                
-    init() {
-        self.env = KeyboardEnvironment(languages: languages,
+                    
+    init(keyboardStorage: KeyboardStorage) {
+        self.env = KeyboardEnvironment(keyboardStorage: keyboardStorage,
                                        textDocumentProxy: nil,
                                        shouldChangeKeyboards: false,
                                        shouldPlayClickSound: true)
@@ -27,20 +27,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            ZStack {
-                Color.gray
-                
+        ZStack {
+            Color.gray
+            VStack {
+                Spacer().layoutPriority(1)
                 KeyboardView(viewModel: viewModel, keyboardCalculator: calculator)
-                    .frame(width: 300, height: 200)
+                    .frame(width: UIScreen.main.bounds.width, height: 216)
                     .environmentObject(env)
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

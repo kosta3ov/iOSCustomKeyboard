@@ -26,10 +26,10 @@ struct KeyboardAppearanceSettings: View {
     
     var body: some View {
         List {
-//            NavigationLink(destination: KeyboardStyleSettings()) {
-//                Text("Themes")
-//            }
+            NavigationLink(destination: KeyboardStyleSettings()) {
+                Text("Themes")
+            }
             SliderRow(viewModel: viewModel.heightViewModel)
-        }
+        }.navigationBarTitle("Appearance")
     }
 }

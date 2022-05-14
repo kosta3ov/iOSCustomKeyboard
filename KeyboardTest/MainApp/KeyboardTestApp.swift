@@ -18,7 +18,7 @@ struct KeyboardTestApp: App {
         
     var body: some Scene {
         WindowGroup {
-            KeyboardSettings(keyboardSettingsComponent: fabric.createSettingsComponent())
+            KeyboardSettings(keyboradStorage: fabric.keyboardStorage, keyboardSettingsComponent: fabric.createSettingsComponent())
         }
     }
 }

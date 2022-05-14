@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-//struct KeyboardStyleSettings: View {
-//    
-//    var body: some View {
-//        
-//    }
-//    
-//}
+struct KeyboardStyleSettings: View {
+    
+    var body: some View {
+        Text("Se")
+    }
+    
+}

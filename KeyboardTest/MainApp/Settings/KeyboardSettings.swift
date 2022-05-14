@@ -18,7 +18,7 @@ protocol KeyboardSettingsComponentProtocol {
 
 class KeyboardFabric: KeyboardFabricProtocol {
     
-    private let keyboardStorage = KeyboardStorage()
+    var keyboardStorage = KeyboardStorage()
     
     func createSettingsComponent() -> KeyboardSettingsComponentProtocol {
         KeyboardSettingsComponent(languageSettingsViewModel: KeyboardLanguageSettingsViewModel(languageStorage: keyboardStorage), appearanceSettingsViewModel: KeyboardAppearanceSettingsViewModel(appearanceStorage: keyboardStorage))
@@ -39,6 +39,10 @@ class KeyboardSettingsComponent: KeyboardSettingsComponentProtocol {
 
 struct KeyboardSettings: View {
     
+    // TODO: temp delete
+    @ObservedObject
+    var keyboradStorage: KeyboardStorage
+    
     let keyboardSettingsComponent: KeyboardSettingsComponentProtocol
     
     var body: some View {
@@ -50,13 +54,13 @@ struct KeyboardSettings: View {
                 NavigationLink(destination: KeyboardAppearanceSettings(viewModel: keyboardSettingsComponent.appearanceSettingsViewModel)) {
                     SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Appearance", subtitle: "Themes and height", image: UIImage(systemName: "theatermasks.circle")))
                 }
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: ContentView(keyboardStorage: keyboradStorage)) {
                     SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Sound and vibrations", subtitle: nil, image: UIImage(systemName: "speaker.circle")))
                 }
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: ContentView(keyboardStorage: keyboradStorage)) {
                     SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Buttons", subtitle: nil, image: UIImage(systemName: "a.circle")))
                 }
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: ContentView(keyboardStorage: keyboradStorage)) {
                     SettingsRow(viewModel: KeyboardSettingsRowViewModel(title: "Typing", subtitle: "Autocorrection", image: UIImage(systemName: "pencil.circle.fill")))
                 }
             }.navigationTitle(Text("Settings"))

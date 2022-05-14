@@ -25,6 +25,9 @@
 		44B301DF27FC4A4800747EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B301DE27FC4A4800747EE0 /* Assets.xcassets */; };
 		44B301EF27FC5D9C00747EE0 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */; };
 		44B301F327FC5D9C00747EE0 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 44B301EC27FC5D9C00747EE0 /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		44B61D292827FFD800017860 /* KeyboardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE94B6282136CC0030C682 /* KeyboardStorage.swift */; };
+		44B61D2C2828024700017860 /* KeyboardEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B61D2B2828024700017860 /* KeyboardEnvironment.swift */; };
+		44B61D2D2828024B00017860 /* KeyboardEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B61D2B2828024700017860 /* KeyboardEnvironment.swift */; };
 		44B8DA0C27FC702A001D5088 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8DA0B27FC702A001D5088 /* KeyboardView.swift */; };
 		44B8DA0D27FC7033001D5088 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8DA0B27FC702A001D5088 /* KeyboardView.swift */; };
 		44C84DBE280F6A77009F6894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B301DE27FC4A4800747EE0 /* Assets.xcassets */; };
@@ -86,6 +89,7 @@
 		44B301EC27FC5D9C00747EE0 /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B301EE27FC5D9C00747EE0 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		44B301F027FC5D9C00747EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B61D2B2828024700017860 /* KeyboardEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEnvironment.swift; sourceTree = "<group>"; };
 		44B8DA0B27FC702A001D5088 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		44EE30DA2805A68B0009983C /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		44EE30DD2805A8C70009983C /* keyboards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keyboards.json; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 			path = KeyboardExtension;
 			sourceTree = "<group>";
 		};
+		44B61D2A2828022E00017860 /* KeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				44B8DA0B27FC702A001D5088 /* KeyboardView.swift */,
+				44B61D2B2828024700017860 /* KeyboardEnvironment.swift */,
+			);
+			path = KeyboardView;
+			sourceTree = "<group>";
+		};
 		44EE94B0281DB1A70030C682 /* MainApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +198,7 @@
 			children = (
 				44EE94BE282174270030C682 /* Button */,
 				44856824281A9F3800332103 /* Rows */,
-				44B8DA0B27FC702A001D5088 /* KeyboardView.swift */,
+				44B61D2A2828022E00017860 /* KeyboardView */,
 				4485681B281A9C9F00332103 /* KeyboardViewModel.swift */,
 				4485681E281A9D5000332103 /* KeyboardCalculator.swift */,
 				44856821281A9E5800332103 /* Keyboard+Extensions.swift */,
@@ -370,6 +383,7 @@
 				44EE30E22808D34B0009983C /* KeyboardRow.swift in Sources */,
 				44EE30E8280D8F730009983C /* Language.swift in Sources */,
 				44856819281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */,
+				44B61D2C2828024700017860 /* KeyboardEnvironment.swift in Sources */,
 				44B301DB27FC4A4500747EE0 /* KeyboardTestApp.swift in Sources */,
 				44EE94C12821760F0030C682 /* CheckRow.swift in Sources */,
 				44EE94B3281DB20C0030C682 /* KeyboardSettings.swift in Sources */,
@@ -382,6 +396,7 @@
 			files = (
 				44EE30E62808D3990009983C /* KeyboardButton.swift in Sources */,
 				44856827281AA60300332103 /* KeyboardShiftDeleteRow.swift in Sources */,
+				44B61D292827FFD800017860 /* KeyboardStorage.swift in Sources */,
 				4485681A281A962E00332103 /* KeyboardServiceLastRow.swift in Sources */,
 				448568172819845E00332103 /* KeyboardFunctionalRow.swift in Sources */,
 				44856823281A9E5800332103 /* Keyboard+Extensions.swift in Sources */,
@@ -391,6 +406,7 @@
 				44856820281A9D5000332103 /* KeyboardCalculator.swift in Sources */,
 				44EE30E9280D8F730009983C /* Language.swift in Sources */,
 				44B8DA0D27FC7033001D5088 /* KeyboardView.swift in Sources */,
+				44B61D2D2828024B00017860 /* KeyboardEnvironment.swift in Sources */,
 				44EE30DC2805A6C80009983C /* KeyboardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
