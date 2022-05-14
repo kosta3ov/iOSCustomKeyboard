@@ -33,7 +33,7 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        keyboardEnvironment = KeyboardEnvironment(languages: [.englisch, .russian, .german],
+        keyboardEnvironment = KeyboardEnvironment(keyboardStorage: KeyboardStorage(),
                                                   textDocumentProxy: textDocumentProxy,
                                                   shouldChangeKeyboards: self.needsInputModeSwitchKey, shouldPlayClickSound: false)
 

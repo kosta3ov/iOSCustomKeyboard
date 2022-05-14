@@ -9,34 +9,6 @@ import SwiftUI
 import Combine
 import Foundation
 
-final class KeyboardEnvironment: ObservableObject {
-    
-    let languages: [Language]
-    let textDocumentProxy: UITextDocumentProxy?
-    let shouldChangeKeyboards: Bool
-    let shouldPlayClickSound: Bool
-    
-    let indent: CGFloat = 4
-    let sideKeyboardIndent: CGFloat = 3
-    
-    // Applied only in last row additional number keyboard
-    let extendedIndent: CGFloat = 9
-        
-    var returnKeyTitle: String {
-        textDocumentProxy?.returnKeyTitle ?? "return"
-    }
-    
-    init(languages: [Language],
-         textDocumentProxy: UITextDocumentProxy?,
-         shouldChangeKeyboards: Bool,
-         shouldPlayClickSound: Bool) {
-        self.languages = languages
-        self.textDocumentProxy = textDocumentProxy
-        self.shouldChangeKeyboards = shouldChangeKeyboards
-        self.shouldPlayClickSound = shouldPlayClickSound
-    }
-}
-
 struct KeyboardView: View {
     
     @EnvironmentObject var keyboardEnvironment: KeyboardEnvironment
@@ -59,7 +31,7 @@ struct KeyboardView: View {
         VStack() {
             Spacer().frame(height: keyboardEnvironment.sideKeyboardIndent)
             
-            VStack(spacing: keyboardEnvironment.indent) {
+            VStack(spacing: keyboardEnvironment.verticalIndent) {
                 ForEach(viewModel.buttons, id: \.self) { row in
                     GeometryReader { geo in
                         let buttonSize = keyboardCalculator.calcButtonSize(from: geo)

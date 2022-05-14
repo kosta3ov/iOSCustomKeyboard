@@ -21,7 +21,7 @@ struct KeyboardShiftDeleteRow: View {
     
     @ViewBuilder
     private var shiftButton: some View {
-        KeyboardButton(viewModel: ButtonViewModel(character: viewModel.shiftKey, image: UIImage(systemName: viewModel.isUppercased ? "shift.fill" : "shift")),
+        KeyboardButton(viewModel: ButtonViewModel(character: viewModel.shiftKey, image: UIImage(systemName: viewModel.isUppercased ? "shift.fill" : "shift"), shouldScaleOnTap: false),
                        onTapSubject: onTapSubject)
     }
 
@@ -35,7 +35,7 @@ struct KeyboardShiftDeleteRow: View {
             keyboardRow
                 .environmentObject(keyboardEnvironment)
             
-            KeyboardButton(viewModel: ButtonViewModel(character: KeyboardSpecialKey.delete.rawValue, image: UIImage(systemName: "delete.left")),
+            KeyboardButton(viewModel: ButtonViewModel(character: KeyboardSpecialKey.delete.rawValue, image: UIImage(systemName: "delete.left"), shouldScaleOnTap: false),
                            onTapSubject: onTapSubject)
                 .environmentObject(keyboardEnvironment)
                 .frame(width: buttonSize.width,

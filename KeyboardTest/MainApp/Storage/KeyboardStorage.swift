@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol LanguageStorageProtocol {
     
@@ -24,11 +25,13 @@ protocol KeyboardAppearanceStorageProtocol {
     
 }
 
-class KeyboardStorage {
+class KeyboardStorage: ObservableObject {
     
     // TODO: change to user defaults
     var allLanguages: [Language] = [.englisch, .german, .russian]
-    var languages: [Language] = [.englisch]
+    
+    @Published var languages: [Language] = [.englisch]
+    
     var height: Double = 250.0
     var backgroundImage: UIImage?
     
