@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftUI
-import AVFoundation
 
 final class KeyboardViewModel: ObservableObject {
     
@@ -116,9 +115,6 @@ final class KeyboardViewModel: ObservableObject {
     }
     
     private func insertCharacter(character: String) {
-        if keyboardEnvironment.shouldPlayClickSound {
-            AudioServicesPlaySystemSound(1306)
-        }
         document?.insertText(character)
     }
     

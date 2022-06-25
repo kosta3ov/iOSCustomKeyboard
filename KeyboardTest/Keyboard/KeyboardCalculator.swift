@@ -29,19 +29,19 @@ final class KeyboardCalculator: ObservableObject {
     }
     
     func calcButtonSize(from geo: GeometryProxy) -> CGSize {
-        return CGSize(width: (geo.size.width - keyboardEnvironment.indent * (CGFloat(maxRowCount) - 1.0) - 2 * keyboardEnvironment.sideKeyboardIndent) / CGFloat(maxRowCount), height: geo.size.height)
+        return CGSize(width: (geo.size.width - keyboardEnvironment.indents.indent * (CGFloat(maxRowCount) - 1.0) - 2 * keyboardEnvironment.indents.sideKeyboardIndent) / CGFloat(maxRowCount), height: geo.size.height)
     }
     
     // Calculating last row side button size and side indent for shift and delete buttons
     func calsLastRowSideButtonSize(from geo: GeometryProxy, row: [ButtonViewModel]) -> (CGSize, CGFloat) {
         let buttonSize = calcButtonSize(from: geo)
-        let allButtonsWidth: CGFloat = buttonSize.width * CGFloat(row.count) + (CGFloat(row.count) - 1.0) * keyboardEnvironment.indent
-        let sideAvailableWidth: CGFloat = (geo.size.width - allButtonsWidth - 2.0 * keyboardEnvironment.sideKeyboardIndent) / 2.0
+        let allButtonsWidth: CGFloat = buttonSize.width * CGFloat(row.count) + (CGFloat(row.count) - 1.0) * keyboardEnvironment.indents.indent
+        let sideAvailableWidth: CGFloat = (geo.size.width - allButtonsWidth - 2.0 * keyboardEnvironment.indents.sideKeyboardIndent) / 2.0
         
         let sideButtonWidth = max(min(sideAvailableWidth, 1.3 * buttonSize.width), buttonSize.width)
         
-        if sideAvailableWidth - sideButtonWidth < keyboardEnvironment.indent {
-            return (buttonSize, keyboardEnvironment.indent)
+        if sideAvailableWidth - sideButtonWidth < keyboardEnvironment.indents.indent {
+            return (buttonSize, keyboardEnvironment.indents.indent)
         }
         else {
             let sideIndent = sideAvailableWidth - sideButtonWidth
@@ -51,6 +51,6 @@ final class KeyboardCalculator: ObservableObject {
     
     // Calculating size for last row in additional 123 keyboard
     func calcLastRowAdditionalButtonSize(from geo: GeometryProxy, row: [ButtonViewModel]) -> CGSize {
-        return CGSize(width: (geo.size.width - keyboardEnvironment.indent * CGFloat(row.count - 1) - 2 * keyboardEnvironment.extendedIndent - 2 * keyboardEnvironment.sideKeyboardIndent) / CGFloat(row.count + 2), height: geo.size.height)
+        return CGSize(width: (geo.size.width - keyboardEnvironment.indents.indent * CGFloat(row.count - 1) - 2 * keyboardEnvironment.indents.extendedIndent - 2 * keyboardEnvironment.indents.sideKeyboardIndent) / CGFloat(row.count + 2), height: geo.size.height)
     }
 }

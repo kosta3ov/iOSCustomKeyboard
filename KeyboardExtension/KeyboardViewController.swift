@@ -32,10 +32,8 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(self.nextKeyboardButton)
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        keyboardEnvironment = KeyboardEnvironment(keyboardStorage: KeyboardStorage(),
-                                                  textDocumentProxy: textDocumentProxy,
-                                                  shouldChangeKeyboards: self.needsInputModeSwitchKey, shouldPlayClickSound: false)
+                
+        keyboardEnvironment = KeyboardEnvironment(keyboardStorage: KeyboardStorage(), indents: KeyboardIndentSettings(), buttonSettings: KeyboardButtonSettings(shouldPlayClickSound: true, shouldProvideHapticFeedback: true), externalSettings: KeyboardExternalSettings(textDocumentProxy: textDocumentProxy, shouldChangeKeyboards: false))
 
         let keyboardManager = KeyboardManager()
         let keyboardViewModel = KeyboardViewModel(keyboardEnvironment: keyboardEnvironment!, buttonsProvider: keyboardManager)

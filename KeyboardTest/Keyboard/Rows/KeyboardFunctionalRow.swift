@@ -19,9 +19,9 @@ struct KeyboardFunctionalRow: View {
     
     var body: some View {
         HStack() {
-            Spacer().frame(width: keyboardEnvironment.sideKeyboardIndent)
+            Spacer().frame(width: keyboardEnvironment.indents.sideKeyboardIndent)
 
-            HStack(spacing: keyboardEnvironment.indent) {
+            HStack(spacing: keyboardEnvironment.indents.indent) {
                 KeyboardButton(viewModel: ButtonViewModel(character: viewModel.additionalCharactersKey, shouldScaleOnTap: false), onTapSubject: onTapSubject)
                     .environmentObject(keyboardEnvironment)
                     .frame(minWidth: 50, maxWidth: 50)
@@ -40,7 +40,7 @@ struct KeyboardFunctionalRow: View {
                     .frame(minWidth: 60)
             }
             
-            Spacer().frame(width: keyboardEnvironment.sideKeyboardIndent)
+            Spacer().frame(width: keyboardEnvironment.indents.sideKeyboardIndent)
         }
     }
 }

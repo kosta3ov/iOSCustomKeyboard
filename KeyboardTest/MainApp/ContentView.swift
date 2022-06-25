@@ -19,9 +19,9 @@ struct ContentView: View {
                     
     init(keyboardStorage: KeyboardStorage) {
         self.env = KeyboardEnvironment(keyboardStorage: keyboardStorage,
-                                       textDocumentProxy: nil,
-                                       shouldChangeKeyboards: false,
-                                       shouldPlayClickSound: true)
+                                       indents: KeyboardIndentSettings(),
+                                       buttonSettings: KeyboardButtonSettings(shouldPlayClickSound: true, shouldProvideHapticFeedback: false),
+                                       externalSettings: KeyboardExternalSettings(textDocumentProxy: nil, shouldChangeKeyboards: false))
         self.viewModel = KeyboardViewModel(keyboardEnvironment: env, buttonsProvider: KeyboardManager())
         self.calculator = KeyboardCalculator(viewModel: viewModel, keyboardEnvironment: env)
     }

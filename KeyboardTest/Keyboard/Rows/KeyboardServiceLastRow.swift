@@ -19,7 +19,7 @@ struct KeyboardServiceLastRow: View {
     let onTapSubject: KeyboardSubject
 
     var body: some View {
-        HStack(spacing: keyboardEnvironment.extendedIndent) {
+        HStack(spacing: keyboardEnvironment.indents.extendedIndent) {
             KeyboardButton(viewModel: ButtonViewModel(character: viewModel.shiftKey),
                            onTapSubject: onTapSubject)
                 .environmentObject(keyboardEnvironment)

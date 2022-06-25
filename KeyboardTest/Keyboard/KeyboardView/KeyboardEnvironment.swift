@@ -8,38 +8,57 @@
 import SwiftUI
 import Combine
 
-final class KeyboardEnvironment: ObservableObject {
-    
-    @ObservedObject
-    var keyboardStorage: KeyboardStorage
-    
-    var languages: [Language]
-    let textDocumentProxy: UITextDocumentProxy?
-    let shouldChangeKeyboards: Bool
+// TODO: Maybe injected inside storage
+struct KeyboardButtonSettings {
     let shouldPlayClickSound: Bool
-    
-    let indent: CGFloat = 6
-    let verticalIndent: CGFloat = 4
+    let shouldProvideHapticFeedback: Bool
+}
+
+// TODO: Maybe injected inside storage
+struct KeyboardIndentSettings {
+    let indent: CGFloat = 4
+    let verticalIndent: CGFloat = 8
     let sideKeyboardIndent: CGFloat = 3
     
     // Applied only in last row additional number keyboard
     let extendedIndent: CGFloat = 9
+}
+
+struct KeyboardExternalSettings {
+    let textDocumentProxy: UITextDocumentProxy?
+    // Need to add possibility to change languages button for old iphones
+    let shouldChangeKeyboards: Bool
+}
+
+final class KeyboardEnvironment: ObservableObject {
         
+    var languages: [Language]
+    
+    var textDocumentProxy: UITextDocumentProxy? {
+        return externalSettings.textDocumentProxy
+    }
+    
     var returnKeyTitle: String {
         textDocumentProxy?.returnKeyTitle ?? "return"
     }
+
+    let indents: KeyboardIndentSettings
+    let buttonSettings: KeyboardButtonSettings
+    let externalSettings: KeyboardExternalSettings
     
-    var bag = Set<AnyCancellable>()
+    @ObservedObject
+    private var keyboardStorage: KeyboardStorage
+    private var bag = Set<AnyCancellable>()
     
     init(keyboardStorage: KeyboardStorage,
-         textDocumentProxy: UITextDocumentProxy?,
-         shouldChangeKeyboards: Bool,
-         shouldPlayClickSound: Bool) {
+         indents: KeyboardIndentSettings,
+         buttonSettings: KeyboardButtonSettings,
+         externalSettings: KeyboardExternalSettings) {
         self.keyboardStorage = keyboardStorage
         self.languages = keyboardStorage.languages
-        self.textDocumentProxy = textDocumentProxy
-        self.shouldChangeKeyboards = shouldChangeKeyboards
-        self.shouldPlayClickSound = shouldPlayClickSound
+        self.indents = indents
+        self.buttonSettings = buttonSettings
+        self.externalSettings = externalSettings
         
         keyboardStorage.objectWillChange.sink { [weak self] in
             self?.languages = keyboardStorage.languages

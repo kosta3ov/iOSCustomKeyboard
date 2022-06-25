@@ -17,7 +17,7 @@ struct KeyboardRow: View {
     let onTapSubject: KeyboardSubject
         
     var body: some View {
-        HStack(spacing: keyboardEnvironment.indent) {
+        HStack(spacing: keyboardEnvironment.indents.indent) {
             ForEach(row, id: \.character) { button in
                 KeyboardButton(viewModel: button, onTapSubject: onTapSubject)
                     .frame(width: buttonSize.width, height: buttonSize.height)
